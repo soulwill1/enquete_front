@@ -34,7 +34,7 @@ const PollDelete = ({ pollId }: { pollId: string }) => {
         onClick={handleDelete}
         className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded"
       >
-        Deletar Enquete
+        Deletar
       </button>
       {message && <p className="mt-4 text-red-500">{message}</p>}
     </div>
