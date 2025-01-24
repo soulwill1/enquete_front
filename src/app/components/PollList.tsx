@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import PollDelete from './PollDelete';
 
 // Definição de tipos para as enquetes
 interface Poll {
@@ -61,9 +62,12 @@ const PollList = () => {
             >
               {getStatus(poll.startDate, poll.endDate)}
             </span>
-            <Link href={`/polls/update/${poll.id}`} className="text-blue-500 hover:underline">
-                Editar Enquete
-            </Link>
+            <div className='flex gap-3'>
+              <Link href={`/polls/update/${poll.id}`} className="text-blue-500 hover:underline p-3">
+                  Editar Enquete
+              </Link>
+              <PollDelete pollId={String(poll.id)} />
+            </div>
           </li>
         ))}
       </ul>
